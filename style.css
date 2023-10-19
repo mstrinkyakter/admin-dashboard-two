@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Pixelify+Sans&family=Poppins:wght@100;400;500;600;700&family=Roboto:wght@100&family=ZCOOL+KuaiLe&display=swap');
+
+body,
+button{
+    font-family: "Inter",sans-serif;
+}
+:root{
+    --offcanvas-width:200px;
+    
+}
+.sidebar_nav {
+    width: var(--offcanvas-width) !important; 
+}
+.sidebar-Link{
+    display: flex;
+    align-items: center;
+}
+.sidebar-Link .right-icon{
+    display: inline-flex;
+    transition: all 0.25s ease;
+}
+.sidebar-Link[aria-expanded="true"] .right-icon{
+    transform:rotate(180deg) ;
+}
+@media (min-width:992px) {
+    body{
+        overflow: auto !important;
+    }
+    .offcanvas-backdrop::before{
+        display:none;
+    }
+    .sidebar_nav{
+        transform: none;
+        visibility: visible !important;
+        top:56px !important;
+        height: calc(100% - 56px)!important;
+    }
+    main{
+        margin-left: var(--offcanvas-width);
+    }
+}
